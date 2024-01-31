@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const con = mysql.createConnection({
     user: 'root',
     host: 'localhost',
-    database: 'Nutri Camis'
+    database: 'NutriCamis'
 });
 
 //Rota de teste
@@ -17,12 +17,12 @@ const teste = (req, res) => {
 
 //CRUD - create
 const create = (req, res) => {
-    let cpf = req.body.cpf;
-    let nome = req.body.nome;
-    let sobrenome = req.body.sobrenome;
-    let consulta = req.body.consulta;
-    let query = `INSERT INTO clientes(cpf, nome, sobrenome, consulta, horário) VALUE`;
-    query += `('${cpf}', '${nome}', '${sobrenome}', '${consulta}', '${horário});`;
+    let CPF = req.body.CPF;
+    let Nome = req.body.Nome;
+    let Sobrenome = req.body.Sobrenome;
+    let Consulta = req.body.Consulta;
+    let query = `INSERT INTO clientes(cpf, nome, sobrenome, consulta) VALUE`;
+    query += `('${CPF}', '${Nome}', '${Sobrenome}', '${Consulta}');`;
     con.query(query,(err, result)=>{
         if(err)
            // res.redirect("http://127.0.0.1:5500/front/erro.html?erro=Provalmente o CPF já está cadastrado&err="+err.code);

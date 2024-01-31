@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open sans', sans-serif;
+}
+
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(203, 163, 240);
+}
+
+header{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: fixed;
+    top: 20vh;
+}
+
+h1{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+tr{
+    display: flex;
+    gap: 40px;
+    margin-bottom: 10px;
+}
+
+thead{
+    display: flex;
+    gap: 40px;
+    margin-bottom: 10px;
+}
+
+nav{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: fixed;
+    top: 27vh;
+    gap: 80px;
+    margin-bottom: 10px;
+}
