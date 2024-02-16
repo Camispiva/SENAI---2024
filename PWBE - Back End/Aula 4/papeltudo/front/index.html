@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Papelaria</title>
+</head>
+<body>
+    <header>
+        <h1>Inventário - Papelaria PapelTudo</h1>
+        <form action="cadastrar.php" method="post">
+            <div>
+                <label for="ID">ID:</label>
+                <input type="text" id="ID" name="ID" required>
+            </div>
+            <div>
+                <label for="Nome">Nome:</label>
+                <input type="text" id="Nome" name="Nome" required>
+            </div>
+            <div>
+                <label for="Descrição">Descrição:</label>
+                <input type="text" id="Descrição" name="Descrição" required>
+            </div>
+            <div>
+                <label for="Valor">Valor:</label>
+                <input type="text" id="Valor" name="Valor" required>
+            </div>
+            <div>
+                <label for="Ação">Ação:</label>
+                <button>Cadastrar</button>
+            </div>
+        </form>
+    </header>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody id="dados">
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Mesa</td>
+                    <td>Mesa de escritório</td>
+                    <td>100,00</td>
+                    <td><button>[ - ]</button></td>
+                    <td><button>[ X ]</button></td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Computador</td>
+                    <td>Desktop DEL i5, 8GB RAM, SSD 500GB</td>
+                    <td>2200,00</td>
+                    <td><button>[ - ]</button></td>
+                    <td><button>[ X ]</button></td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Cadeira</td>
+                    <td>Cadeira giratória de escritório</td>
+                    <td>500,00</td>
+                    <td><button>[ - ]</button></td>
+                    <td><button>[ X ]</button></td>
+                </tr>
+                <tr>
+                    <td>004</td>
+                    <td>Longarina</td>
+                    <td>Longarina de três cadeiras</td>
+                    <td>450,00</td>
+                    <td><button>[ - ]</button></td>
+                    <td><button>[ X ]</button></td>
+                </tr>
+                <tr>
+                    <td>005</td>
+                    <td>Multifuncional</td>
+                    <td>Impressora e copiadora multifuncional Xerox</td>
+                    <td>2000,00</td>
+                    <td><button>[ - ]</button></td>
+                    <td><button>[ X ]</button></td>
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <div class="oi">
+            <label for="Mensagens do sistema">Mensagens do sistema:</label>
+            <input type="text" id="Mensagens do sistema" name="Mensagens do sistema" readonly>
+        </div>
+        <div class="olá">
+            <label for="Patrimônio total">Patrimônio total:</label>
+            <input type="text" id="Patrimônio total" name="Patrimônio total" readonly>
+        </div>
+    </footer>
+</body>
+<script>
+    const dados = document.getElementById('dados');
+    fetch('http://localhost:3000/clientes')
+        .then(res => res.json())
+        .then(res => {
+            res.forEach(cli => {
+                dados.innerHTML += `
+                    <tr>
+                        <td>${cli.id}</td>
+                        <td>${cli.nome}</td>
+                        <td>${cli.descrição}</td>
+                        <td>${cli.valor}</td>
+                        <td>
+                            <button onclick='del(${cli.id})'>[ - ]</button>
+                            <button onclick='window.location.href="./update.html?id=${cli.id}&nome=${cli.nome}&descriçaõ=${cli.descrição}&valor=${cli.valor}"'>
+                                [ * ]
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+        });
+
+    function del(id) {
+        fetch(`http://localhost:3000/clientes/${id}`,{method: 'DELETE'})
+            .then(res => res.json())
+            .then(res => {
+                window.location.reload();
+            });
+    }
+</script>
+</html>
