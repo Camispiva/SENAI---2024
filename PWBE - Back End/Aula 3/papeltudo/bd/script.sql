@@ -1,7 +1,7 @@
 -- SQL do banco de dados de Inventários com apenas uma tabela
-DROP DATABASE IF EXISTS inventario;
-CREATE DATABASE inventario CHARSET=UTF8 COLLATE utf8_general_ci;
-USE inventario;
+DROP DATABASE IF EXISTS papelaria;
+CREATE DATABASE papelaria CHARSET=UTF8 COLLATE utf8_general_ci;
+USE papelaria;
 -- DDL Criação da estrutura da tabela
 CREATE TABLE item(
     id varchar(5) not null primary key,
