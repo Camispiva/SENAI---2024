@@ -18,7 +18,7 @@ export default function App() {
         <Stack.Screen
             name="Login"
             component={LoginForm}
-            options={{ title: 'Bem vindo ' }} />
+            options={{ title: 'Bem vindo' }} />
             
         <Stack.Screen
             name="telaIMC"
