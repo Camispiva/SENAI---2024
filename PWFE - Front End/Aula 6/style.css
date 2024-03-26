@@ -1,0 +1,70 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilos para o header */
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+  
+  /* Estilos para as seções */
+  section {
+    padding: 50px 0;
+  }
+  
+  /* Estilos para os modais */
+  .modal-title {
+    font-size: 1.5rem;
+  }
+  
+  /* Estilos para os cards de tarefas */
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+  }
+  
+  /* Estilos para botões */
+  .btn {
+    font-size: 1rem;
+  }
+  
+  /* Estilos para formulários */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    font-size: 1rem;
+  }
+  
+  /* Estilos para rodapé */
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  /* Estilos para texto de direitos autorais */
+  .footer p {
+    margin: 0;
+  }
+  
+  /* Estilos para links */
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
